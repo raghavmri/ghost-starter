@@ -27,8 +27,8 @@ RUN mkdir -p $GHOST_CONTENT/adapters/storage/cloudinary
 COPY --from=builder /app/node_modules/ghost-storage-cloudinary $GHOST_CONTENT/adapters/storage/cloudinary
 COPY --from=builder /app/config.production.json /var/lib/ghost/config.production.json
 COPY --from=builder /app/themes $GHOST_CONTENT/themes
-
-RUN sudo ghost config --ip '::' --port $PORT --url http://0.0.0.0:$PORT --no-prompt 
+USER root
+RUN ghost config --ip '::' --port $PORT --url http://0.0.0.0:$PORT --no-prompt 
 ARG $PORT
 RUN echo $PORT
 ENV PORT=$PORT
