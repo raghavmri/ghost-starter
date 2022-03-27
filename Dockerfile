@@ -29,9 +29,8 @@ COPY --from=builder /app/config.production.json /var/lib/ghost/config.production
 COPY --from=builder /app/themes $GHOST_CONTENT/themes
 USER root
 ARG PORT
-RUN echo $PORT
-ENV PORT=$PORT
-RUN ghost config --ip '::' --port $PORT --url http://0.0.0.0:$PORT --no-prompt 
+ARG BLOG_URL
+RUN ghost config --ip '::' --port $PORT --url $BLOG_URL --no-prompt 
 USER node
 # For debbugging purposes only
 # RUN ls -l /var/lib/ghost/
