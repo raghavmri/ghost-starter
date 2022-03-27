@@ -13,6 +13,7 @@ ARG MAILGUN_SMTP_PASSWORD
 ARG PORT
 ARG CLOUDINARY_URLs
 
+RUN echo $PORT
 RUN mkdir -p themes
 RUN yarn install
 RUN yarn start
@@ -22,11 +23,18 @@ RUN ["bash", "bin/theme.sh"]
 FROM ghost:4.41-alpine as ghost
 WORKDIR /var/lib/ghost
 USER node
+ARG PORT
+RUN echo $PORT
+EXPOSE $PORT
 RUN mkdir -p $GHOST_CONTENT/adapters/storage/cloudinary
+
 COPY --from=builder /app/node_modules/ghost-storage-cloudinary $GHOST_CONTENT/adapters/storage/cloudinary
 COPY --from=builder /app/config.production.json /var/lib/ghost/config.production.json
 COPY --from=builder /app/themes $GHOST_CONTENT/themes
 
+USER root
+RUN ghost config --ip '::' --port $PORT --url http://0.0.0.0:$PORT --no-prompt 
+USER node
 # For debbugging purposes only
 # RUN ls -l /var/lib/ghost/
 # RUN ls -l $GHOST_CONTENT/themes
