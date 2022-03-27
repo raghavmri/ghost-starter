@@ -22,10 +22,13 @@ RUN ["bash", "bin/theme.sh"]
 FROM ghost:4.41-alpine as ghost
 WORKDIR /var/lib/ghost
 USER node
+ARG PORT
+ENV PORT=$PORT
 RUN mkdir -p $GHOST_CONTENT/adapters/storage/cloudinary
 COPY --from=builder /app/node_modules/ghost-storage-cloudinary $GHOST_CONTENT/adapters/storage/cloudinary
 COPY --from=builder /app/config.production.json /var/lib/ghost/config.production.json
 COPY --from=builder /app/themes $GHOST_CONTENT/themes
+EXPOSE $PORT
 
 # For debbugging purposes only
 # RUN ls -l /var/lib/ghost/
