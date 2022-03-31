@@ -2,14 +2,16 @@
 	"name": "ghost-starter",
 	"version": "1.0.0",
 	"main": "index.js",
+	"description": "Deploy Ghost v4 on Railway",
+	"author": "Raghav Mrituanjaya <raghav@gogamic.com>",
+	"license": "MIT",
 	"scripts": {
 		"start": "node index.js"
 	},
-	"author": "Raghav Mrituanjaya <raghav@gogamic.com>",
-	"license": "MIT",
 	"dependencies": {
 		"ghost-storage-cloudinary": "^2.2.1",
 		"lyra": "github:TryGhost/lyra#main",
-		"casper": "github:TryGhost/Casper#main"
+		"casper": "github:TryGhost/Casper#main",
+		"ruby": "github:raghavmri/Ruby#main"
 	}
 }

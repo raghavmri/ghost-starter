@@ -1019,6 +1019,10 @@ rimraf@~2.4.0:
   dependencies:
     glob "^6.0.1"
 
+"ruby@github:raghavmri/Ruby#main":
+  version "1.0.0"
+  resolved "https://codeload.github.com/raghavmri/Ruby/tar.gz/ae2e399d9918feaaf74deed6ac3e36a92060f56b"
+
 safe-buffer@^5.0.1, safe-buffer@^5.1.2:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"

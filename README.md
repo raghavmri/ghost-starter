@@ -6,22 +6,20 @@ This example deploys self-hosted version of [Ghost](https://ghost.org/). Interna
 
 ## ✨ Features
 
--  Ghost
--  MySQL
+- Ghost
+- MySQL
+- Pre-Installed Themes(Lyra, Casper, Ruby)
 
 ## 💁‍♀️ How to use
 
--  Click the Railway button 👆
--  Add the environment variables
-   -  If you do not add the `CLOUDINARY_URL` environment variable, your images/files will not be persisted between deploys.
-   -  Add the `MAILGUN_SMTP_LOGIN` and `MAILGUN_SMTP_PASSWORD` variables if you want to invite users to your admin panel or send emails to your subscribers when you publish a new post.
+- Click the Railway button 👆
+- Add the environment variables
+- If you do not add the `CLOUDINARY_URL` environment variable, your images/files will not be persisted between deploys.
+- Add the `MAILGUN_SMTP_LOGIN` and `MAILGUN_SMTP_PASSWORD` variables if you want to invite users to your admin panel or send emails to your subscribers when you publish a new post.
 
 ## 📝 Notes
 
--  Railway's filesystem is ephemeral which is why any changes to the filesystem are not persisted between deploys. This is why, this example uses Cloudinary for storage.
--  The above limitation also affects the way themes work with Ghost, we use the `bin/themes.sh` script to copy over the themes every time you deploy. That way, the theme is always present.
-   -  To add a theme, first add the package as a dependency to the `package.json` file and then add it to the list of themes in the `bin/themes.sh` file.
-   -  Do NOT add a theme directly using the Ghost UI, it will look like it worked but will break whenever you deploy your app again.
-
-
-https://railway.app/new/template?template=https://github.com/raghavmri/ghost-starter&plugins=mysql&envs=CLOUDINARY_URL,MAILGUN_SMTP_LOGIN,MAILGUN_SMTP_PASSWORD,BLOG_URL,PORT&optionalEnvs=CLOUDINARY_URL,MAILGUN_SMTP_LOGIN,MAILGUN_SMTP_PASSWORD&CLOUDINARY_URLDesc=For+file+storage.+If+you+do+not+add+this,+your+images+won>'t+persist+between+deploys&BLOG_URLDesc=The+URL+of+your+Ghost+blog&BLOG_URLDefault=https://${{+RAILWAY_STATIC_URL>+}}&PORTDefault=2386
+- Railway's filesystem is ephemeral which is why any changes to the filesystem are not persisted between deploys. This is why, this example uses Cloudinary for storage.
+- The above limitation also affects the way themes work with Ghost, we use the `bin/themes.sh` script to copy over the themes every time you deploy. That way, the theme is always present.
+- To add a theme, first add the package as a dependency to the `package.json` file and then add it to the list of themes in the `bin/themes.sh` file.
+- Do NOT add a theme directly using the Ghost UI, it will look like it worked but will break whenever you deploy your app again.
