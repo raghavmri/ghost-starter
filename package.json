@@ -12,6 +12,6 @@
 		"ghost-storage-cloudinary": "^2.2.1",
 		"lyra": "github:TryGhost/lyra#main",
 		"casper": "github:TryGhost/Casper#main",
-		"ruby": "github:raghavmri/Ruby#main"
+		"ruby": "github:TryGhost/Ruby#main"
 	}
 }

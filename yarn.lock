@@ -1019,9 +1019,9 @@ rimraf@~2.4.0:
   dependencies:
     glob "^6.0.1"
 
-"ruby@github:raghavmri/Ruby#main":
+"ruby@github:TryGhost/Ruby#main":
   version "1.0.0"
-  resolved "https://codeload.github.com/raghavmri/Ruby/tar.gz/ae2e399d9918feaaf74deed6ac3e36a92060f56b"
+  resolved "https://codeload.github.com/TryGhost/Ruby/tar.gz/13fb52d8d3c7d0b175796224d062cb4a0e7f7dfa"
 
 safe-buffer@^5.0.1, safe-buffer@^5.1.2:
   version "5.2.1"
